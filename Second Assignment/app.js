@@ -1,15 +1,36 @@
-// 1. Create file using append 
+// 1.1 Create file using write 
 var file_s = require('fs');
 file_s.writeFile('index.html','HIII', function(err) {
   if (err) throw err;
   console.log("File created successfully !!");
 });
 
-// 2. append file 
+// 1.2 Create file using append
+var file_s = require('fs');
+file_s.appendFile('index.html','HIII', function(err) {
+  if (err) throw err;
+  console.log("File created successfully !!");
+});
+
+// 1.3 Create file using open
+var file_s = require('fs');
+file_s.open('index.html','w', function(err) {
+  if (err) throw err;
+  console.log("File created successfully !!");
+});
+
+// 2.1 Update by append file 
 var file_s = require('fs');
 file_s.appendFile("index.html", 'Hello welcome to Kirirom!', function(err){
   if (err) throw err;
-  console.log("File appended successfully!");
+  console.log("File updated successfully!");
+});
+
+// 2.2 Update by write file 
+var file_s = require('fs');
+file_s.writeFile("index.html", 'Hello welcome to Kirirom!', function(err){
+  if (err) throw err;
+  console.log("File updated successfully!");
 });
 
 // 3. close file 
